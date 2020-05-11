@@ -9,7 +9,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        //
+        return Product::latest()->get()->toJson();
     }
 
     public function store(Request $request)
@@ -30,6 +30,9 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-        //
+        $products = Product::findOrFail($id);
+        $products->delete();
+        $products = self::index();
+        return $products;
     }
 }

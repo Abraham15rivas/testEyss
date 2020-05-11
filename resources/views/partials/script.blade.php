@@ -53,8 +53,8 @@
 
     function category(item, index) 
     {   
-        // let tb = document.createElement("tbody");
-        // tb.setAttribute('id', 'category_tb')
+        let tb = document.createElement("tbody");
+        tb.setAttribute('id', 'category_tb')
 
         var table = 
             `<tr> 
