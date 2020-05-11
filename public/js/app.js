@@ -37333,6 +37333,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
+axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/categories').then(function (response) {
+  console.log(response.data);
+});
 
 /***/ }),
 
