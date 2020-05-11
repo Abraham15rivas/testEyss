@@ -37319,6 +37319,27 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/all.js":
+/*!*****************************!*\
+  !*** ./resources/js/all.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+document.addEventListener('DOMContentLoaded', function () {
+  axios.get('/api/categories').then(function (response) {
+    var data = response.data;
+    data.forEach(category);
+  });
+
+  function category(item, index) {
+    var table = "<tr> \n                <td>".concat(index + 1, "</td>\n                <td class=\"text-left\"><p>").concat(item.name, "</p></td>\n                <td class=\"text-left\"><p>").concat(item.description, "</p></td>\n                <td class=\"text-center\">\n                    <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\" onclick=\"show(").concat(item.id, ");\">Ver productos</button>\n                    <button type=\"button\" class=\"btn btn-success\" onclick=\"update(").concat(item.id, ");\">Editar</button>\n                    <button type=\"button\" class=\"btn btn-danger\" onclick=\"deleteC(").concat(item.id, ");\">Eliminar</button>\n                </td>\n            </tr>");
+    document.getElementById('category_tb').innerHTML += table;
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -37333,9 +37354,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
-axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/categories').then(function (response) {
-  console.log(response.data);
-});
+
+__webpack_require__(/*! ./all */ "./resources/js/all.js");
 
 /***/ }),
 

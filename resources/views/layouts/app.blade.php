@@ -13,12 +13,12 @@
         
         <div class="container">
 
-            <main class="">
+            <main class="" id="body">
                 @yield('content')
             </main>
 
         </div>
         
-        <script src="{{ asset('js/app.js') }}"></script>      
+        <script src="{{ asset('js/app.js') }}"></script>     
     </body>
 </html>
