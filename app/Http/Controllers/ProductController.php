@@ -7,32 +7,33 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index()
-    {
-        return Product::latest()->get()->toJson();
-    }
-
     public function store(Request $request)
     {
-        //
+        Product::create($request->all());
+        return self::all($request->category_id);
     }
 
-    public function show($id)
+    public function all($id)
     {
         $products = Product::where('category_id', $id)->get()->toJson();
         return $products;
     }
 
-    public function update(Request $request, $id)
+    public function show(Product $product)
     {
-        //
+        return $product->toJson();
     }
 
-    public function destroy($id)
+    public function update(Request $request, Product $product)
     {
-        $products = Product::findOrFail($id);
-        $products->delete();
-        $products = self::index();
-        return $products;
+        $product->update($request->all());
+        return self::all($request->category_id);
+    }
+
+
+    public function destroy(Product $product)
+    {
+        $product->delete();
+        return self::all($product->id);
     }
 }

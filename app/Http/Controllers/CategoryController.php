@@ -12,33 +12,21 @@ class CategoryController extends Controller
         return Category::latest()->get()->toJson();
     }
 
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-
-    }
-
     public function show(Category $category)
     {
-        //
+        return $category->toJson();
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        $category = Category::find($id)->update($request->all());
-        return $category;
+        $category->update($request->all());
+        return self::index();
     }
 
 
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        $category = Category::findOrFail($id);
         $category->delete();
-        $categories = self::index();
-        return $categories;
+        return self::index();
     }
 }

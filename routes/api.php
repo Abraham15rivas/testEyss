@@ -9,13 +9,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Categories
 Route::get('categories', 'CategoryController@index');
-Route::put('categories/actualizar', 'CategoryController@update');
-Route::post('categories/guardar', 'CategoryController@store');
-Route::delete('categories/borrar/{id}', 'CategoryController@destroy');
-Route::get('categories/buscar', 'CategoryController@show');
+Route::put('categories/update/{category}', 'CategoryController@update');
+Route::delete('categories/delete/{category}', 'CategoryController@destroy');
+Route::get('categories/search/{category}', 'CategoryController@show');
 // Products
-Route::get('products', 'ProductController@index');
-Route::put('products/actualizar', 'ProductController@update');
-Route::post('products/guardar', 'ProductController@store');
-Route::delete('products/borrar/{id}', 'ProductController@destroy');
-Route::get('products/search/{id}', 'ProductController@show');
+Route::put('products/update/{product}', 'ProductController@update');
+Route::post('products/store', 'ProductController@store');
+Route::delete('products/delete/{product}', 'ProductController@destroy');
+Route::get('products/search/{product}', 'ProductController@show');
+Route::get('products/search-all/{id}', 'ProductController@all');

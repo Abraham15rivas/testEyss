@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 <td class="text-left"><p>${item.name}</p></td>
                 <td class="text-left"><p>${item.description}</p></td>
                 <td class="text-center">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="show(${item.id});">Ver productos</button>
-                    <button type="button" class="btn btn-success" onclick="update(${item.id});">Editar</button>
-                    <button type="button" class="btn btn-danger" onclick="deleteC(${item.id});">Eliminar</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="showProducts(${item.id});">Ver productos</button>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Category" onclick="editCategory(${item.id});">Editar</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteCategory(${item.id});">Eliminar</button>
                 </td>
             </tr>`
             

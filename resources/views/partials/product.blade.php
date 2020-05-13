@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLongTitle">Lista de productos</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
@@ -11,9 +11,6 @@
         <div class="modal-body">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 text-center">
-                        <h1>Lista de categorias</h1>
-                    </div>
                     <div class="col-12">
                         <table class="table table-responsive table-dark" id="table_product">
                             <thead>
@@ -34,6 +31,7 @@
             </div>
         </div>
         <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Product" onclick="createProduct()">Agregar</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
         </div>

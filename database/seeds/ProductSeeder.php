@@ -12,6 +12,10 @@ class ProductSeeder extends Seeder
             ['2','Gorra','color azul'],
             ['3','Laptop','PC i5'],
             ['4','Play4','consolas...'],
+            ['1','Nevera','color blanca'],
+            ['2','camisa','color roja'],
+            ['3','telefono','android'],
+            ['4','wii','cd de juegos'],
         );
 
         return $array;
