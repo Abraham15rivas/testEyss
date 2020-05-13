@@ -23,7 +23,6 @@ class CategoryController extends Controller
         return self::index();
     }
 
-
     public function destroy(Category $category)
     {
         $category->delete();
